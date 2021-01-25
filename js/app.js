@@ -34,12 +34,12 @@ Test this function by hand in the console to get it working, and when you think 
 function multiply(a, b) {
   let product = a * b;
   let message = `The product of ${a} and ${b} is ${product}.`;
-  console.log([product, message]);
+  //console.log([product, message]);
   return [product, message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-//testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -53,14 +53,23 @@ Fourth element: "The product of 4 and 7 and 5 is 140."
 IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
-
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
 
+
+function sumAndMultiply(a, b, c) {
+  let firstSum = sum(a, b)[0];
+  let secondSum = sum(firstSum, c)[0];
+  let firstMult = multiply(a, b)[0];
+  let secondMult = multiply(firstMult, c)[0];
+  let elementThree = `${a} and ${b} and ${c} sum to ${secondSum}.`;
+  let elementFour = `The product of ${a} and ${b} and ${c} is ${secondMult}.`;
+  //console.log(secondSum);
+
+  return[secondSum, secondMult, elementThree, elementFour];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);//eslint-disable-line
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
