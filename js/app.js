@@ -29,10 +29,13 @@ Write a function called multiply() that takes in two numbers as arguments and re
 "The product of 5 and 9 is 45."
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
-
+//eslint-disable-line
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
-
+function multiply(a, b) {
+  let product = a * b;
+  let message = `The product of ${a} and ${b} is ${product}.`;
+  console.log([product, message]);
+  return [product, message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
